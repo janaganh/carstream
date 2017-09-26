@@ -1,0 +1,50 @@
+<md-content layout-padding class="connection">
+    <div>
+      <form name="connnectionForm">
+          <div layout="column">
+              <md-input-container class="md-block">
+                <label>Name</label>
+                    <input ng-model="$ctrl.connection.name" required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Client certificate</label>
+                    <textarea ng-model="$ctrl.connection.clientCertificate" rows="2" md-select-on-focus required></textarea>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Client private key</label>
+                    <textarea ng-model="$ctrl.connection.clientPrivatekey" rows="2" md-select-on-focus required></textarea>
+                </md-input-container>
+               <md-input-container class="md-block">
+                    <label>Access token</label>
+                    <textarea ng-model="$ctrl.connection.accessToken" rows="2" md-select-on-focus required></textarea>
+                </md-input-container>
+            <div>
+              <md-button class="md-raised md-primary" ng-click="$ctrl.addConnection()">Add</md-button>
+              <md-button class="md-raised md-primary" ng-click="$ctrl.updateConnection()">Update</md-button>    
+            </div>
+               <md-content class="md-block">
+                       <md-list ng-cloak style="float: left">
+                          <md-list-item ng-repeat="connection in $ctrl.connections">
+                             <div layout="row"> 
+
+                                <md-icon md-svg-icon="{{$ctrl.img.car}}"></md-icon>
+                                <p style="margin-left: 50px; min-width: 200px;cursor: pointer" ng-click="$ctrl.fetchConnection(connection._id)" > 
+                                    {{connection.name}}
+                                </p>
+                               
+                                <md-button class="md-icon-button md-warn" ng-click="$ctrl.connect(connection)" aria- label="Connect to car">
+                                    <md-icon md-svg-icon="{{$ctrl.img.connect}}"></md-icon>
+                                </md-button>
+                               
+                                <md-button class="md-icon-button md-warn" ng-click="$ctrl.removeConnection(connection._id)" aria- label="Remove expression">
+                                    <md-icon md-svg-icon="{{$ctrl.img.remove}}"></md-icon>
+                                </md-button>
+                                 
+                              </div>
+                          </md-list-item>
+                       </md-list>
+                  </md-content>
+          </div>
+      </form>
+    </div>
+</md-content>

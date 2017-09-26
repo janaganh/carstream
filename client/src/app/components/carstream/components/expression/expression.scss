@@ -1,0 +1,66 @@
+.expression {
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 5px 0px;
+
+  md-checkbox {
+    margin-bottom: 0px;
+    width: 100px;
+  }
+
+  md-select {
+    margin: 0;
+    min-width: 50px;
+  }
+
+  md-select .md-select-icon {
+    visibility: hidden;
+  }
+
+  md-select:hover .md-select-icon {
+    visibility: visible;
+  }
+
+  .md-errors-spacer {
+    display: none;
+  }
+
+  .dragHandle {
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .dragHandleIcon {
+    color: #ddd
+  }
+
+  md-input-container {
+    margin: 0;
+  }
+
+  md-input-container .md-input {
+    min-width: 200px;
+  }
+
+  .actionButtons {
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .condition {
+    border-style: none;
+  }
+
+  .label .value-label {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #aaa;
+  }
+}

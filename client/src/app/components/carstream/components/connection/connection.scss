@@ -1,0 +1,21 @@
+.connection {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: #f0f0f0;
+
+  .actionButtons .md-icon {
+    color: black;
+  }
+
+  .actionButtons {
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .actionButtons .md-button.md-icon-button {
+    margin: 0;
+  }
+
+}
