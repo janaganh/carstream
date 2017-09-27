@@ -1,0 +1,8 @@
+*.iws
+*.ipr
+*.iml
+.idea
+node_modules
+/client/dist
+/client/node_modules
+/server/node_modules
