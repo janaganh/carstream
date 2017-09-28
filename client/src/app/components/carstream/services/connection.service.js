@@ -9,7 +9,8 @@ export default class ConnectionService {
   setUpConnection(connectionProperties) { 
         this.socket = new io('http://localhost:3030/');
         this.client = new feathers();
-        this.client.configure(new socketio(this.socket));
+        this.client.configure(new socketio(this.socket, {timeout: 500000}));
+      
         let promise =  this.client.service("query").create(connectionProperties);
         promise
             .then (response => { 
