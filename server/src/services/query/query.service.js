@@ -8,12 +8,11 @@ module.exports = function () {
   const paginate = app.get('paginate');
 
   const options = {
-    name: 'query',
-    paginate
+    name: 'query'  
   };
 
   // Initialize our service with any options it requires
-  app.use('/query', createService(app));
+  app.use('/query', createService(options));
 
   // Get our initialized service so that we can register hooks and filters
   const service = app.service('query');

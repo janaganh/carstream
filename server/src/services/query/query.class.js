@@ -1,32 +1,33 @@
-/* eslint-disable no-unused-vars */
-//import HMKit from 'hmkit';
 const HMKit = require('hmkit');
 const HMKitConnection = require('./hmkit.connection');
+const Processor = require('./processor');
 
 class Service {
   
-    constructor (app) {
-        this.app = app;
+  constructor (options) {
+        this.options = options;
+        
+        this.events = ['data'];
   }
 
+  setup(app) {
+      this.app = app;
+      this.processor = new Processor(this);
+  }    
     
   find (params) {
     return Promise.resolve([]);
   }
 
-  async get (id, params) {
-    
-    let hmkitConnection = this.app.get('hmkit');
-     
-    let  response =  hmkitConnection.hmkit.telematics.sendCommand(
-                hmkitConnection.accessCertificate.getVehicleSerial(),
-                hmkitConnection.hmkit.commands.DiagnosticsCommand.getState()
-      );  
-
-      return response;
+  get (id, params) {   
+      if (id == 'stop') {
+        this.processor.stopRunningQueries();
+        return [];  
+      }
+      return this.processor.process(id);
   }
 
-  create (connection, params) {
+  create (connection, params) {  
     let hmkitConnection = new HMKitConnection(connection);
     try {
         let result = hmkitConnection.setUpConnection();
@@ -35,8 +36,8 @@ class Service {
     }catch(error) {
         return Promise.reject(error);
     }
-          
   }
+   
 
   update (id, data, params) {
     return Promise.resolve(data);
@@ -52,8 +53,8 @@ class Service {
     
 }
 
-module.exports = function (app) {
-  return new Service(app);
+module.exports = function (options) {
+  return new Service(options);
 };
 
 module.exports.Service = Service;

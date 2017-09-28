@@ -1,7 +1,0 @@
-<div layout="row" layout-align="start center">
-    <div ng-repeat="item in $ctrl.callStack"  ng-class="$last?'flex-noshrink':''">
-        <select-property  ng-if="'select' === $ctrl.getUI($index)" item="item" index="$index"></select-property>
-        <date  ng-if="'date' === $ctrl.getUI($index)" item="item" index="$index"></date>
-        <property ng-if="'default' === $ctrl.getUI($index)" item="item" index="$index"></property>
-    </div>
-</div>

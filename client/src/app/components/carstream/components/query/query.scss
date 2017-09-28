@@ -1,0 +1,35 @@
+table { 
+  border: solid thin; 
+  border-collapse: collapse; 
+}
+table caption { 
+  padding-bottom: 0.5em; 
+}
+table th, 
+table td { 
+  border: solid thin;
+  padding: 0.5rem 2rem;
+}
+
+table td {
+  white-space: nowrap;
+}
+
+table th { 
+  font-weight: normal; 
+}
+
+table td { 
+  border-style: none solid; 
+  vertical-align: top; 
+}
+
+table th { 
+  padding: 0.2em; 
+  vertical-align: middle; 
+  text-align: center; 
+}
+
+table tbody td:first-child::after { 
+  content: leader(". "); 
+}

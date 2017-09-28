@@ -27,6 +27,10 @@ export default class ConnectionService {
   get connection() {
      return this.client;
   }
+
+  addListener(handler) {
+    //this.socket.on("news",(message)=>console.log("NEWS="+message));
     
+  }    
       
 }

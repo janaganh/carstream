@@ -1,0 +1,48 @@
+<md-content layout-padding class="connection">
+        <div layout="column" layout-fill>
+          <div flex  layout-fill>
+              <md-content layout-padding>
+                <div>
+                  <form name="queryForm">
+                    <md-input-container class="md-block">
+                      <label>query</label>
+                      <textarea ng-model="$ctrl.query"  rows="5" md-select-on-focus></textarea>
+                    </md-input-container>
+                    <md-button class="md-icon-button md-warn" ng-click="$ctrl.run()" aria- label="Run">
+                        <md-icon md-svg-icon="{{$ctrl.img.run}}"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button md-warn" ng-click="$ctrl.stop()" aria- label="Stop">
+                        <md-icon md-svg-icon="{{$ctrl.img.stop}}"></md-icon>
+                    </md-button>  
+                  </form>
+                </div>
+              </md-content>
+            </div>
+            <div flex layout="row">
+              <div flex="50">    
+                  <md-content layout-padding>
+                    <table ng-if="$ctrl.records.length > 0">
+                         <thead>
+                            <tr>
+                              <td ng-repeat="(key, value) in $ctrl.records[0]" >
+                                  {{key}}
+                              </td>
+                          </tr>
+                         </thead>
+                        <tbody>
+
+                          <tr ng-repeat="row in $ctrl.records | orderBy:'':true track by $index">
+                              <td ng-repeat="(key,value) in row" >
+                                  {{value}}
+                              </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                    </md-content>
+                </div>
+                <div flex="50">
+                    <canvas id="time" width="400" height="400"></canvas>
+                </div>
+            </div>
+    </div>
+</md-content>

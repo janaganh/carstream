@@ -9,7 +9,8 @@ class HMKitConnection {
     async setUpConnection()  {
         this.hmkit = new HMKit(this.connectionProperties.clientCertificate, this.connectionProperties.clientPrivatekey);
         this.accessCertificate = await this.hmkit.downloadAccessCertificate(this.connectionProperties.accessToken);
-        return this.accessCertificate != null ? true : false;
+        this.vehicalSerial = this.accessCertificate.getVehicleSerial();
+        return this.accessCertificate != null && this.vehicalSerial != null ? true : false;
      }
     
 }

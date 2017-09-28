@@ -36,6 +36,7 @@
     "feathers-nedb": "^2.7.0",
     "feathers-rest": "^1.8.0",
     "feathers-socketio": "^2.0.0",
+    "flat": "^4.0.0",
     "helmet": "^3.8.1",
     "hmkit": "^0.3.0",
     "nedb": "^1.8.0",

@@ -7,10 +7,11 @@ import angularMaterial from 'angular-material';
 import 'angular-drag-and-drop-lists';
 
 import { connectionModule } from './components/connection/connection.module';
+import { queryModule } from './components/query/query.module';
 import { carstreamComponent } from './carstream.component';
 
 let module = angular
-    .module('carstream', [angularAnimate, angularMaterial, connectionModule])
+    .module('carstream', [angularAnimate, angularMaterial, connectionModule, queryModule])
     .component('carstream', carstreamComponent)
     .config(['$mdThemingProvider', ($mdThemingProvider) => {
         $mdThemingProvider.theme('default');

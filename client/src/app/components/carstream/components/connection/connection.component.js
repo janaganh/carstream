@@ -8,9 +8,6 @@ export const connectionComponent = {
     template,
     restrict: 'E',
     controller,
-    bindings: {
-       onUpdate1: '&' 
-    },
     require: {
         carstremCtrl: '^carstream'
     }
