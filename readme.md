@@ -9,7 +9,7 @@ npm start
 http://localhost:3030
 
 
-
 sample queries:
-select speed, mileage from Diagnostics poll 4 \n
+select speed, mileage from Diagnostics poll 4
 select tires.frontleft, tires.rearright from Diagnostics poll 4
+

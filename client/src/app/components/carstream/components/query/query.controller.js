@@ -101,7 +101,6 @@ export default class QueryController {
                   if (this.records.length > 50) {
                     this.records.shift();
                   }
-                  console.log("record receied: "+record);
                   this.scope.$apply();
               }
           };
