@@ -10,5 +10,5 @@ http://localhost:3030
 
 
 
-sample queries
+sample queries:
 select speed, mileage from Diagnostics poll 4
