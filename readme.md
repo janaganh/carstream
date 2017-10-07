@@ -11,4 +11,5 @@ http://localhost:3030
 
 
 sample queries:
-select speed, mileage from Diagnostics poll 4
+select speed, mileage from Diagnostics poll 4 \n
+select tires.frontleft, tires.rearright from Diagnostics poll 4
